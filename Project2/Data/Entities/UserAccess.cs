@@ -10,15 +10,15 @@ namespace Project2.Data.Entities
     public class UserAccess
     {
 
-        [Column(Order =0), Key, ForeignKey("UserId")]
+        [Key, Column(Order =0), ForeignKey("UserId")]
         public int UserId { get; set; }
 
 
-        [Column(Order = 1), Key, ForeignKey("AccessTypeId")]
+        [Key, Column(Order = 1), ForeignKey("AccessTypeId")]
         public int AccessTypeId { get; set; }
 
 
-        [Column(Order = 2), Key, ForeignKey("PhotoId")]
+        [Key, Column(Order = 2), ForeignKey("PhotoId")]
         public int PhotoId { get; set; }
 
         public DateTime UserAccessDate { get; set; }
