@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Project2.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,17 @@ namespace Project2.Data
 {
     public class Database_Resource : IdentityDbContext
     {
+        public virtual DbSet<User> Users { get; set; }
+
+        public virtual DbSet<UserAccess> UserAccesses { get; set; }
+
+        public virtual DbSet<AccessType> AccessTypes { get; set; }
+
+        public virtual DbSet<PhotoMetaData> PhotoMetaDatas {get; set;}
+
+        public virtual DbSet<Photo> Photos { get; set; }
+
+
         public Database_Resource(DbContextOptions options) : base(options)
         {
         }
