@@ -27,6 +27,8 @@ namespace Project2.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<UserAccess>()
+                .HasKey(nameof(User.UserId), nameof(AccessType.AccessTypeId), nameof(Photo.PhotoId));
             base.OnModelCreating(builder);
         }
     }
