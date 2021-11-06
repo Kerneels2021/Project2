@@ -21,7 +21,7 @@ namespace Project2.Data
 
         public virtual DbSet<Photo> Photos { get; set; }
 
-        public virtual DbSet<PhotoTag> PhotoTags { get; set; }
+      
 
 
 
