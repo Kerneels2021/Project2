@@ -1,0 +1,13 @@
+﻿@model Project2.Models.PhotoIndexModel
+
+<div class="container body-content">
+    <div class="gallery-content">
+        @foreach (var image in Model.Images)
+            {
+                <div class="gallery-image"></div>
+                <span>image.PhotoName</span>
+                
+            }
+    </div>
+</div>
+
