@@ -18,6 +18,7 @@ namespace Project2
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            //testc comment
         }
 
         public IConfiguration Configuration { get; }
