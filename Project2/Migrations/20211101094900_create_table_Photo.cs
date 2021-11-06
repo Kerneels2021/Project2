@@ -65,7 +65,8 @@ namespace Project2.Migrations
                 columns: table => new
                 {
                     PhotoId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    PhotoName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    PhotoName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    //PhotoUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
