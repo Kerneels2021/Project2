@@ -24,6 +24,7 @@ namespace Project2
                     config.SetBasePath(Directory.GetParent(AppContext.BaseDirectory).FullName);
                     config.AddJsonFile("appsettings.json", false);
                     config.AddJsonFile("appsetting.Development.json", true);
+                    config.AddEnvironmentVariables();
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
