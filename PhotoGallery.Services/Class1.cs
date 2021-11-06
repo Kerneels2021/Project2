@@ -2,7 +2,7 @@
 
 namespace PhotoGallery.Services
 {
-    public class ImageService : IImage
+   /*public class ImageService : IImage
     {
-    }
+    }*/
 }
