@@ -15,6 +15,8 @@ namespace Project2.Data.Entities
 
         public string PhotoName { get; set; }
 
+        public string PhotoUrl { get; set; }
+
     }
 
     

@@ -14,7 +14,7 @@ namespace Project2.Data.Entities
         public Guid PhotoMetaDataId { get; set; }
         public string Geolocation { get; set; }
         public DateTime DateCaptured { get; set; }
-        public string Tags { get; set; }
+        public string PhotoTag { get; set; }
 
         [ForeignKey(nameof(User))]
         public Guid UserId { get; set; }

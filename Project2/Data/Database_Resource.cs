@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Project2.Data.Entities;
+using Project2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,9 @@ namespace Project2.Data
         public virtual DbSet<PhotoMetaData> PhotoMetaDatas {get; set;}
 
         public virtual DbSet<Photo> Photos { get; set; }
+
+        public virtual DbSet<PhotoTag> PhotoTags { get; set; }
+
 
 
         public Database_Resource(DbContextOptions options) : base(options)
