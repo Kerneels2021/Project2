@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Project2.Data;
 using Project2.Models;
@@ -12,11 +13,17 @@ namespace Project2.Controllers
 {
     public class HomeController : Controller
     {
+        private IConfiguration _config;
+        private string CONNECTION { get; }
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger,Database_Resource db)
+       
+
+        public HomeController(ILogger<HomeController> logger,Database_Resource db, IConfiguration config)
         {
             _logger = logger;
+            _config = config;
+            CONNECTION = _config["DataBaseConnectionString"];
         }
 
         public IActionResult Index()
