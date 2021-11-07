@@ -13,17 +13,20 @@ namespace Project2.Controllers
 {
     public class HomeController : Controller
     {
-        private IConfiguration _config;
+        private IConfiguration _config1;
+        private IConfiguration _config2;
         private string CONNECTION { get; }
+        private string AZURECONNECTION { get; }
         private readonly ILogger<HomeController> _logger;
 
        
 
-        public HomeController(ILogger<HomeController> logger,Database_Resource db, IConfiguration config)
+        public HomeController(ILogger<HomeController> logger,Database_Resource db, IConfiguration config1, IConfiguration config2)
         {
             _logger = logger;
-            _config = config;
-            CONNECTION = _config["DataBaseConnectionString"];
+            _config1 = config1;
+            CONNECTION = _config1["DataBaseConnectionString"];
+            AZURECONNECTION = config2["StorageConnectionString"];
         }
 
         public IActionResult Index()
@@ -41,6 +44,13 @@ namespace Project2.Controllers
             return View();
         }
 
+      /*  [HttpPost]
+        public IActionResult UploadImage()
+        {
+            var container = _imageService.GetBlobContainer(AZURECONNECTION, "photoimages");
+            return View();
+        }
+      */
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
