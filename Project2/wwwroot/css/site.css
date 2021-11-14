@@ -33,7 +33,15 @@
 .image-detail {
     padding: 12px;
     border-radius: 2px;
-    
+    padding: 8px;
+    background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    height: 50%;
+    width: 50%;
+    margin: 12px;
+    position: relative;
+    object-fit: contain;
 }
 
 .image-detail-meta {

@@ -22,9 +22,7 @@ namespace Project2.Controllers
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            //_config1 = config1;
-            //CONNECTION = _config1["DataBaseConnectionString"];
-            //AZURECONNECTION = config2["StorageConnectionString"];
+            
         }
 
         public IActionResult Index()

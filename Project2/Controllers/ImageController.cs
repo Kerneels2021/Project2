@@ -36,7 +36,7 @@ namespace Project2.Controllers
         {
             var container = _imageService.GetBlobContainer(AzureConnectionString, "photoimages");
             var content = ContentDispositionHeaderValue.Parse(file.ContentDisposition);
-            var fileName = content.FileName.Trim('"');//,' ');
+            var fileName = content.FileName.Trim('"',' ');
 
             //Get a reference to the Block Blob
             var blockBlob = container.GetBlockBlobReference(fileName);
@@ -48,28 +48,16 @@ namespace Project2.Controllers
             
         }
 
-       /* // GET: ImageController
-        public ActionResult Index()
+        // GET: ImageController/Delete/5
+        public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // GET: ImageController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: ImageController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: ImageController/Create
+        // POST: ImageController/Delete/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        //[ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, IFormCollection collection)
         {
             try
             {
@@ -102,25 +90,79 @@ namespace Project2.Controllers
             }
         }
 
-        // GET: ImageController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+        /* // GET: ImageController
+         public ActionResult Index()
+         {
+             return View();
+         }
 
-        // POST: ImageController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }*/
+         // GET: ImageController/Details/5
+         public ActionResult Details(int id)
+         {
+             return View();
+         }
+
+         // GET: ImageController/Create
+         public ActionResult Create()
+         {
+             return View();
+         }
+
+         // POST: ImageController/Create
+         [HttpPost]
+         [ValidateAntiForgeryToken]
+         public ActionResult Create(IFormCollection collection)
+         {
+             try
+             {
+                 return RedirectToAction(nameof(Index));
+             }
+             catch
+             {
+                 return View();
+             }
+         }
+
+         // GET: ImageController/Edit/5
+         public ActionResult Edit(int id)
+         {
+             return View();
+         }
+
+         // POST: ImageController/Edit/5
+         [HttpPost]
+         [ValidateAntiForgeryToken]
+         public ActionResult Edit(int id, IFormCollection collection)
+         {
+             try
+             {
+                 return RedirectToAction(nameof(Index));
+             }
+             catch
+             {
+                 return View();
+             }
+         }
+
+         // GET: ImageController/Delete/5
+         public ActionResult Delete(int id)
+         {
+             return View();
+         }
+
+         // POST: ImageController/Delete/5
+         [HttpPost]
+         [ValidateAntiForgeryToken]
+         public ActionResult Delete(int id, IFormCollection collection)
+         {
+             try
+             {
+                 return RedirectToAction(nameof(Index));
+             }
+             catch
+             {
+                 return View();
+             }
+         }*/
     }
 }
