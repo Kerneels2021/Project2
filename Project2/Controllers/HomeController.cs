@@ -13,18 +13,18 @@ namespace Project2.Controllers
 {
     public class HomeController : Controller
     {
-        private IConfiguration _config1;
-        private IConfiguration _config2;
-        private string CONNECTION { get; }
-        private string AZURECONNECTION { get; }
+        //private IConfiguration _config1;
+        //private IConfiguration _config2;
+       // private string CONNECTION { get; }
+        //private string AZURECONNECTION { get; }
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            _config1 = config1;
-            CONNECTION = _config1["DataBaseConnectionString"];
-            AZURECONNECTION = config2["StorageConnectionString"];
+            //_config1 = config1;
+            //CONNECTION = _config1["DataBaseConnectionString"];
+            //AZURECONNECTION = config2["StorageConnectionString"];
         }
 
         public IActionResult Index()
