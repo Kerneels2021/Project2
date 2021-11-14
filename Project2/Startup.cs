@@ -1,15 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Project2.Data;
+using ImageGallery.Data;
+using PhotoGallery.Services;
 
 namespace Project2
 {
@@ -18,7 +14,6 @@ namespace Project2
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            //testc comment
         }
 
         public IConfiguration Configuration { get; }
@@ -27,15 +22,17 @@ namespace Project2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<Database_Resource>(options =>
-            {
-                options.UseSqlServer(Configuration.GetValue<string>("CONNECTION"));
-               
-            });
+            
+            services.AddDbContext<ImageGalleryDbContext>(options =>
+
+                options.UseSqlServer(Configuration.GetValue<string>("CONNECTION")));
+
+            services.AddScoped<IImage, ImageService>();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, Database_Resource db)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -62,6 +59,12 @@ namespace Project2
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+          /*  app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });*/
         }
 
        /* public void RunTestDatabase(Database_Resource db)

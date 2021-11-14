@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project2", "Project2.csproj", "{B84E8685-9D59-47BE-8345-25DE4BB91726}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoGallery.Services", "..\PhotoGallery.Services\PhotoGallery.Services.csproj", "{00C1393C-529E-40BE-AED6-4B03AA864845}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageGallery.Services", "..\PhotoGallery.Services\ImageGallery.Services.csproj", "{00C1393C-529E-40BE-AED6-4B03AA864845}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageGallery.Data", "..\ImageGallery.Data\ImageGallery.Data.csproj", "{45F9929F-9982-47DC-96BA-0A20409534D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{00C1393C-529E-40BE-AED6-4B03AA864845}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00C1393C-529E-40BE-AED6-4B03AA864845}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00C1393C-529E-40BE-AED6-4B03AA864845}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45F9929F-9982-47DC-96BA-0A20409534D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45F9929F-9982-47DC-96BA-0A20409534D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45F9929F-9982-47DC-96BA-0A20409534D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45F9929F-9982-47DC-96BA-0A20409534D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

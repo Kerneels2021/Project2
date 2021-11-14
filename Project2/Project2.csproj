@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>09759cbb-d37f-4ac4-b148-7b0fc9061855</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,11 +14,17 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.11" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.11">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.11"/>
+      <PackageReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ImageGallery.Data\ImageGallery.Data.csproj" />
+    <ProjectReference Include="..\PhotoGallery.Services\ImageGallery.Services.csproj" />
   </ItemGroup>
 
 </Project>

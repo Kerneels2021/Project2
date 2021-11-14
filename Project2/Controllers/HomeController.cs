@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Project2.Data;
+
 using Project2.Models;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ namespace Project2.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger,Database_Resource db)
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }

@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Project2.Migrations
+namespace ImageGallery.Data.Migrations
 {
-    public partial class create_table_UserAccess : Migration
+    public partial class updated : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
