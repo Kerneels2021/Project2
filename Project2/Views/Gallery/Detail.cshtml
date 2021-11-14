@@ -3,17 +3,22 @@
 <div class="=container body-content">
     <div class="row image-detail-container">
         <div class="image-detail">
-            <img src="@Model.Url" alt="@Model.Title"/>
+            <img src="@Model.Url" alt="@Model.Title" />
         </div>
-    </div>   
+    </div>
     <div class="row image-detail-meta">
         <span>Title: @Model.Title</span>
         <span>Uploaded: @Model.CreatedOn</span>
     </div>
     <div class="row controls">
+        <a class="btn btn-warning" asp-controller="Gallery" asp-action="Edit">
+            Edit details
+        </a>
+    </div>    
+    <div class="row controls">
         <a class="btn btn-primary" asp-controller="Gallery" asp-action="Index">
             Back to Gallery
         </a>
     </div>
-    
+
 </div>

@@ -54,7 +54,7 @@ namespace Project2.Controllers
             return View();
         }
 
-        // POST: ImageController/Delete/5
+        /*// POST: ImageController/Delete/5
         [HttpPost]
         //[ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
@@ -67,7 +67,7 @@ namespace Project2.Controllers
             {
                 return View();
             }
-        }
+        }*/
 
         // GET: ImageController/Edit/5
         public ActionResult Edit(int id)
@@ -75,7 +75,7 @@ namespace Project2.Controllers
             return View();
         }
 
-        // POST: ImageController/Edit/5
+        /*// POST: ImageController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -88,7 +88,7 @@ namespace Project2.Controllers
             {
                 return View();
             }
-        }
+        }*/
 
         /* // GET: ImageController
          public ActionResult Index()
