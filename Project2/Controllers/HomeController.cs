@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace Project2.Controllers
 {
+    
     public class HomeController : Controller
     {
         
@@ -37,13 +39,7 @@ namespace Project2.Controllers
             return View();
         }
 
-      /*  [HttpPost]
-        public IActionResult UploadImage()
-        {
-            var container = _imageService.GetBlobContainer(AZURECONNECTION, "photoimages");
-            return View();
-        }
-      */
+      
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

@@ -3,18 +3,19 @@
 <div class="=container body-content">
     <div class="row image-detail-container">
         <div class="image-detail">
-            <img src="@Model.Url" alt="@Model.Title" Resize(width="300" , height="300" , preserveAspectRatio:true, preventEnlarge:true), 
-                 style= "float: left; margin-right: 10px; margin-bottom : 10px;"/>
-            <div class="image-detail">
-                <span>Title: @Model.Title</span>
+            <img src="@Model.Url" alt="@Model.Title" Resize(width="300" , height="300" , preserveAspectRatio:true, preventEnlarge:true),
+                 style="float: left; margin-right: 10px; margin-bottom : 10px;" />
+
+            <div class="image-detail-meta">                
+                <span>Title : @Model.Title</span>
             </div>
-            <div class="image-detail">
+            <div class="image-detail-meta">
                 <span>CreatedOn: @Model.CreatedOn</span>
             </div>
-            <div class="image-detail">
+            <div class="image-detail-meta">
                 <span>Geolocation: @Model.Geolocation</span>
             </div>
-            <div class="image-detail">
+            <div class="image-detail-meta">
                 <span>Tags: @Model.Tags</span>
             </div>
         </div>

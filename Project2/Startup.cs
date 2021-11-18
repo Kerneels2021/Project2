@@ -6,6 +6,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using ImageGallery.Data;
 using PhotoGallery.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
+ 
 
 namespace Project2
 {
@@ -21,6 +23,7 @@ namespace Project2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+           
             services.AddControllersWithViews();
             
             services.AddDbContext<ImageGalleryDbContext>(options =>

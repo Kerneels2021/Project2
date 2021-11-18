@@ -35,10 +35,7 @@ namespace PhotoGallery.Services
             return GetAll().Where(img => img.Tags.Any(t => t.Description == tag));
         }
 
-        IEnumerable<GalleryImage> IImage.GetWithTag(string tag)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public CloudBlobContainer GetBlobContainer(string azureConnectionString, string containerName)
         {

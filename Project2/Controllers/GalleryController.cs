@@ -7,6 +7,7 @@ using System.Linq;
 
 namespace Project2.Controllers
 {
+   
     public class GalleryController : Controller
     {
         private readonly IImage _imageService;
@@ -17,7 +18,7 @@ namespace Project2.Controllers
             _imageService = imageService;
         }
 
-        //[Authorize]
+        
         public IActionResult Index()
         {
             var imageList = _imageService.GetAll();
@@ -29,7 +30,19 @@ namespace Project2.Controllers
             return View(model);
         }
 
-        
+        public IActionResult Search(string tag)
+        {
+            
+            var imageList = _imageService.GetWithTag(tag);
+            var model = new GalleryIndexModel()
+            {
+                Images = imageList,
+                SearchQuery = tag
+            };
+            return View(model);
+        }
+
+
         public IActionResult Detail(int id)
         {
             if (ModelState.IsValid)

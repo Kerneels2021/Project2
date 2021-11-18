@@ -40,6 +40,7 @@
 
 .image-detail-meta {
     padding : 12px;
+    border: solid 2px;
 }
 
 .submit {
@@ -52,14 +53,18 @@
 }
 
 #upload-form {
-    padding: 60px;
-    margin : auto;
+    padding: 10px;
+    margin: auto;
+    
     
 }
 
 .upload-container {
     padding: 2%;
-    object-fit:contain;
+    height: 100px;
+    width: 100px;
+    position: relative;
+   
 }
 
 .drop-shadow {
