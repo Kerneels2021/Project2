@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ImageGallery.Data.Migrations
 {
     [DbContext(typeof(ImageGalleryDbContext))]
-    [Migration("20211112160530_intial")]
-    partial class intial
+    [Migration("20211118161519_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,31 @@ namespace ImageGallery.Data.Migrations
                 .HasAnnotation("ProductVersion", "5.0.11")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ImageGallery.Data.ImageTag", b =>
+            modelBuilder.Entity("ImageGallery.Data.Models.GalleryImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Geolocation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Url")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("GalleryImages");
+                });
+
+            modelBuilder.Entity("ImageGallery.Data.Models.ImageTag", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -41,28 +65,7 @@ namespace ImageGallery.Data.Migrations
                     b.ToTable("ImageTags");
                 });
 
-            modelBuilder.Entity("ImageGallery.Data.Models.GalleryImage", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("Created")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Url")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("GalleryImages");
-                });
-
-            modelBuilder.Entity("ImageGallery.Data.ImageTag", b =>
+            modelBuilder.Entity("ImageGallery.Data.Models.ImageTag", b =>
                 {
                     b.HasOne("ImageGallery.Data.Models.GalleryImage", null)
                         .WithMany("Tags")

@@ -47,11 +47,12 @@ namespace PhotoGallery.Services
             return blobClient.GetContainerReference(containerName);
         }
 
-        public async Task SetImage(string title, string tags, Uri uri)
+        public async Task SetImage(string title, string geo,string tags, Uri uri)
         {
             var image = new GalleryImage
             {      
-                Title = title,               
+                Title = title,  
+                Geolocation = geo,
                 Tags = ParseTags(tags),
                 Url = uri.AbsoluteUri,
                 Created = DateTime.Now

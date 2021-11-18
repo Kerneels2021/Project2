@@ -7,6 +7,7 @@ namespace ImageGallery.Data.Models
     {
         public int Id { get; set; }
         public string Title { get; set; }
+        public string Geolocation { get; set; }
         public DateTime Created { get; set; }
         public string Url { get; set; }
         public virtual IEnumerable<ImageTag> Tags { get; set; }

@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ImageGallery.Data\ImageGallery.Data.csproj" />
+    <ProjectReference Include="..\ImageGallery.Data\PhotoImageGallery.Data.csproj" />
   </ItemGroup>
 
 </Project>

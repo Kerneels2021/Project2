@@ -13,10 +13,7 @@ namespace Project2.Controllers
 {
     public class HomeController : Controller
     {
-        //private IConfiguration _config1;
-        //private IConfiguration _config2;
-       // private string CONNECTION { get; }
-        //private string AZURECONNECTION { get; }
+        
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)

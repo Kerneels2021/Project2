@@ -7,8 +7,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 280px;
-    width: 280px;
+    height: 80px;
+    width: 80px;
+    object-fit :cover;
 }
 
 .gallery-image-container {
@@ -17,8 +18,8 @@
     background: #fff;
     border-radius: 2px;
     display: inline-block;
-    height: 300px;
-    width: 300px;
+    height: 100px;
+    width: 100px;
     margin: 12px;
     position: relative;
 
@@ -27,21 +28,14 @@
 
 .image-detail-container {
     text-align: left;
-    
+    padding: 8px;
+   
 }
 
 .image-detail {
     padding: 12px;
     border-radius: 2px;
-    padding: 8px;
-    background: #fff;
-    border-radius: 2px;
-    display: inline-block;
-    height: 50%;
-    width: 50%;
-    margin: 12px;
-    position: relative;
-    object-fit: contain;
+   
 }
 
 .image-detail-meta {
@@ -54,12 +48,13 @@
 
 .btn-file {
     margin: 6px;
+    border:medium;
 }
 
 #upload-form {
     padding: 60px;
     margin : auto;
-    width : 50%;
+    
 }
 
 .upload-container {

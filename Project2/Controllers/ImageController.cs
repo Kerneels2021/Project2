@@ -32,20 +32,23 @@ namespace Project2.Controllers
         }
 
         [HttpPost]      
-        public async Task<IActionResult> UploadNewImage(IFormFile file, string tags, string title)
+        public async Task<IActionResult> UploadNewImage(IFormFile file, string tags, string title, string geo)
         {
-            var container = _imageService.GetBlobContainer(AzureConnectionString, "photoimages");
-            var content = ContentDispositionHeaderValue.Parse(file.ContentDisposition);
-            var fileName = content.FileName.Trim('"',' ');
+            if (ModelState.IsValid)
+            {
+                var container = _imageService.GetBlobContainer(AzureConnectionString, "photoimages");
+                var content = ContentDispositionHeaderValue.Parse(file.ContentDisposition);
+                var fileName = content.FileName.Trim('"', ' ');
 
-            //Get a reference to the Block Blob
-            var blockBlob = container.GetBlockBlobReference(fileName);
-            await blockBlob.UploadFromStreamAsync(file.OpenReadStream());
-            await _imageService.SetImage(title, tags, blockBlob.Uri);
+                //Get a reference to the Block Blob
+                var blockBlob = container.GetBlockBlobReference(fileName);
+                await blockBlob.UploadFromStreamAsync(file.OpenReadStream());
+                await _imageService.SetImage(title,geo, tags, blockBlob.Uri);
 
-            
-            return RedirectToAction("Index", "Gallery");
-            
+
+                return RedirectToAction("Index", "Gallery");
+            }
+            return View();
         }
 
         // GET: ImageController/Delete/5

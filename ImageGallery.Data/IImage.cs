@@ -14,7 +14,7 @@ namespace ImageGallery.Data
 
         CloudBlobContainer GetBlobContainer(string connectionString, string containerName);
 
-        Task SetImage(string title, string tags, Uri uri);
+        Task SetImage(string title,string geo,string tags, Uri uri);
 
         List<ImageTag> ParseTags(string tags);
 
