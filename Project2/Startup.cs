@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using ImageGallery.Data;
 using PhotoGallery.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
- 
+using Project2.Models;
 
 namespace Project2
 {
@@ -23,7 +23,15 @@ namespace Project2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           
+            services.AddIdentity<AppUser, AppRole>(options =>
+            {
+                options.User.RequireUniqueEmail = true;
+            }).AddEntityFrameworkStores<IdentityAppContext>();
+
+            services.AddDbContext<IdentityAppContext>(options =>
+
+                options.UseSqlServer(Configuration.GetValue<string>("CONNECTION")));
+
             services.AddControllersWithViews();
             
             services.AddDbContext<ImageGalleryDbContext>(options =>

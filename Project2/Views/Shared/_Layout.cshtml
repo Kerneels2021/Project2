@@ -18,6 +18,16 @@
             <div class="container">
                 <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             </div>
+            <div>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a asp-controller="Account" asp-action="Logout">@User.Identity.Name, Logout</a>
+                }
+                else
+                {
+                    <a asp-controller="Account" asp-action="Login">Login</a>
+                }
+            </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>
