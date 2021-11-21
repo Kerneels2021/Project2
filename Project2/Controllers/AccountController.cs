@@ -15,7 +15,7 @@ namespace Project2.Controllers
             SignInManager<IdentityUser> signInManager)
         {
             this.UserMgr = userManager;
-            this.SignInMgr = signInManager;
+            SignInMgr = signInManager;
         }
 
         [HttpGet]
@@ -50,7 +50,7 @@ namespace Project2.Controllers
         public async Task<IActionResult> Logout()
         {
             await SignInMgr.SignOutAsync();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("index", "home");
         }
 
         [HttpGet]

@@ -6,7 +6,7 @@
             <img src="@Model.Url" alt="@Model.Title" Resize(width="300" , height="300" , preserveAspectRatio:true, preventEnlarge:true),
                  style="float: left; margin-right: 10px; margin-bottom : 10px;" />
 
-            <div class="image-detail-meta">                
+            <div class="image-detail-meta">
                 <span>Title : @Model.Title</span>
             </div>
             <div class="image-detail-meta">
@@ -20,16 +20,20 @@
             </div>
         </div>
     </div>
-    
+
     <div class="row controls">
-        <a class="btn btn-warning" asp-controller="Gallery" asp-action="Edit">
-            Edit details
+        <a class="btn btn-danger" asp-controller="Gallery" asp-action="Delete">
+            Delete
         </a>
-    </div>    
+        <a class="btn btn-warning" asp-controller="Gallery" asp-action="Edit">
+            Edit
+        </a>
+    </div>
+
     <div class="row controls">
         <a class="btn btn-primary" asp-controller="Gallery" asp-action="Index">
             Back to Gallery
         </a>
     </div>
-    
+
 </div>

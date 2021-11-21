@@ -1,23 +1,43 @@
 ﻿@model Project2.Models.GalleryIndexModel
+@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<IdentityUser> signInManager;
 
-<div class="container body-content">
-    <div>
-
-        <h3 style="color:red">Click on the thumbnail image to view or edit details</h3>
-        
+<header>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li>
+                <a asp-controller="Image" asp-action="Upload">Upload</a>
+            </li>
+        </ul>
     </div>
-    <div class="row gallery-content">
+</header>
 
-        @foreach (var image in Model.Images)
-        {
-            <div class="gallery-image-container drop-shadow">
-                <a asp-controller="Gallery" asp-action="Detail" asp-route-id="@image.Id">
-                    <div class="gallery-image" style="background-image:url(@image.Url)"></div>
-                </a>
-            </div>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+
+        </nav>
+    </header>
+
+    <div class="container body-content">
+        <div>
+
+            <h3 style="color:red">Click on the thumbnail image to view or edit details</h3>
+
+        </div>
+        <div class="row gallery-content">
+
+            @foreach (var image in Model.Images)
+            {
+                <div class="gallery-image-container drop-shadow">
+                    <a asp-controller="Gallery" asp-action="Detail" asp-route-id="@image.Id">
+                        <div class="gallery-image" style="background-image:url(@image.Url)"></div>
+                    </a>
+                </div>
 
 
-        }
+            }
 
+        </div>
     </div>
-</div>
+</body>

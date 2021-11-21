@@ -26,12 +26,7 @@ namespace Project2
              {
                  options.User.RequireUniqueEmail = true;
              }).AddEntityFrameworkStores<ImageGalleryDbContext>();
-
-          /*  services.AddDbContext<ImageGalleryDbContext>(options =>
-
-                options.UseSqlServer(Configuration.GetValue<string>("LOGINCONNECTION")));
-
-            services.AddControllersWithViews();*/
+         
             
             services.AddDbContext<ImageGalleryDbContext>(options =>
 
@@ -65,7 +60,7 @@ namespace Project2
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Account}/{action=Register}/{id?}");
+                    pattern: "{controller=Home}/{action=index}/{id?}");
             });
           /*  app.UseMvc(routes =>
             {

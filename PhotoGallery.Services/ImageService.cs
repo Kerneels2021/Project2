@@ -35,7 +35,9 @@ namespace PhotoGallery.Services
             return GetAll().Where(img => img.Tags.Any(t => t.Description == tag));
         }
 
-        
+       
+
+
 
         public CloudBlobContainer GetBlobContainer(string azureConnectionString, string containerName)
         {
