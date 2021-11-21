@@ -26,6 +26,17 @@
     
 }
 
+.upload{
+    padding: 8px;
+    background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    height: 200px;
+    width: 10px;
+    margin: 12px;
+    position: relative;
+}
+
 .image-detail-container {
     text-align: left;
     padding: 8px;
@@ -47,6 +58,14 @@
     padding: 2%;
 }
 
+.edit{
+    padding: 2%
+}
+
+.delete{
+    padding: 2%
+}
+
 .btn-file {
     margin: 6px;
     border:medium;
@@ -61,9 +80,9 @@
 
 .upload-container {
     padding: 2%;
-    height: 100px;
-    width: 100px;
-    position: relative;
+    height: auto;
+    width: auto;
+    position:center;
    
 }
 
