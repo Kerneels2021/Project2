@@ -1,5 +1,4 @@
 ﻿using ImageGallery.Data;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Project2.Models;
 using System.Linq;
@@ -7,7 +6,7 @@ using System.Linq;
 
 namespace Project2.Controllers
 {
-   
+
     public class GalleryController : Controller
     {
         private readonly IImage _imageService;

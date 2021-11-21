@@ -1,13 +1,12 @@
+using ImageGallery.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.EntityFrameworkCore;
-using ImageGallery.Data;
 using PhotoGallery.Services;
-using Microsoft.AspNetCore.Authentication.Cookies;
- 
 
 namespace Project2
 {
@@ -23,8 +22,16 @@ namespace Project2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           
-            services.AddControllersWithViews();
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+             {
+                 options.User.RequireUniqueEmail = true;
+             }).AddEntityFrameworkStores<ImageGalleryDbContext>();
+
+          /*  services.AddDbContext<ImageGalleryDbContext>(options =>
+
+                options.UseSqlServer(Configuration.GetValue<string>("LOGINCONNECTION")));
+
+            services.AddControllersWithViews();*/
             
             services.AddDbContext<ImageGalleryDbContext>(options =>
 
@@ -50,17 +57,15 @@ namespace Project2
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-           // RunTestDatabase(db);
-
-            app.UseRouting();
-
-            app.UseAuthorization();
+            app.UseAuthentication();
+           
+            app.UseRouting();          
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Account}/{action=Register}/{id?}");
             });
           /*  app.UseMvc(routes =>
             {
@@ -70,52 +75,7 @@ namespace Project2
             });*/
         }
 
-       /* public void RunTestDatabase(Database_Resource db)
-        {
-            var originalUser = new Data.Entities.User()
-
-            
-           
-            {
-                UserId = Guid.NewGuid(),
-                UserName = "Admin",
-                UserPassword = "admin"
-            } ;
-
-
-
-            //Add to database
-            db.Users.Add(originalUser);
-            db.SaveChanges();
-
-            //Update database
-            var updatedUser = originalUser;
-            originalUser.UserName = "admin";
-            db.Update(updatedUser);
-            db.SaveChanges();
-
-            //Delete from database
-           // db.Users.Remove(db.Users.FirstOrDefault(x => x.UserId == originalUser.UserId));
-            //db.SaveChanges();
-
-
-            //Lookup from database
-            var list = db.Users.AsNoTracking().ToList(); // Query without altering, then you don't need to SaveChanges
-
-            var entity = db.Users.FirstOrDefault(x => x.UserName.Contains("admin")); //singular entity
-                                                                                     // var entity = db.Users.Where(x => x.UserName.Contains("admin")); //list of all entities with admin
-                                                                                     // var entity = db.Users.Any(x => x.UserName.Contains("admin")); //Boolean of all entities with admin
-
-            //var entityWithQuestions = db.Tests.AsNoTracking().FirstOrDefault(x => x.Name.Contains("test") && x.Questions.Where(z=> z.Answer.Contains("2")));
-            //var entityWithQuestions = db.Tests.AsNoTracking()
-            //   .Include(x => x.Questions).FirstOrDefault(XmlConfigurationExtensions => XmlConfigurationExtensions.Name.Contatins("test")); 
-
-            string t = "";
-            
-
-
-
-        }*/
+      
 
     }
 }

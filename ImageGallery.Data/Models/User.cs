@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PhotoImageGallery.Data.Models
 {
-    class User
+    public class Users
     {
         public int Id { get; set; }
         public string UserEmail { get; set; }

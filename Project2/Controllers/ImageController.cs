@@ -1,16 +1,15 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using ImageGallery.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Project2.Models;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using ImageGallery.Data;
-using Microsoft.AspNetCore.Authorization;
 
 namespace Project2.Controllers
 {
 
-    
+
     public class ImageController : Controller
     {
         

@@ -12,12 +12,23 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                <div>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a asp-controller="Account" asp-action="Logout">@User.Identity.Name, Logout</a>
+                    }
+                    else
+                    {
+                        <a asp-controller="Account" asp-action="Login">Login</a>
+                    }
 
+                </div>
                 <a asp-area="" asp-controller="Gallery" asp-action="Index" class="navbar-brand">Photo Image Gallery</a>
             </div>
             <div class="container">
                 <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             </div>
+            
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>
