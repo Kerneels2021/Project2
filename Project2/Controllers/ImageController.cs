@@ -36,7 +36,7 @@ namespace Project2.Controllers
         }
 
         [HttpPost]      
-        public async Task<IActionResult> UploadNewImage(IFormFile file, string tags, string title, string geo)
+        public async Task<IActionResult> UploadNewImage(IFormFile file, string tags, string title, string geolocation)
         {
             if (ModelState.IsValid)
             {
@@ -47,7 +47,7 @@ namespace Project2.Controllers
                 //Get a reference to the Block Blob
                 var blockBlob = container.GetBlockBlobReference(fileName);
                 await blockBlob.UploadFromStreamAsync(file.OpenReadStream());
-                await _imageService.SetImage(title,geo, tags, blockBlob.Uri);
+                await _imageService.SetImage(title,geolocation, tags, blockBlob.Uri);
 
 
                 return RedirectToAction("Index", "Gallery");

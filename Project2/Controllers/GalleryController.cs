@@ -44,7 +44,7 @@ namespace Project2.Controllers
 
         public IActionResult Detail(int id)
         {
-            //if (ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var image = _imageService.GetById(id);
 
@@ -61,7 +61,7 @@ namespace Project2.Controllers
 
                 return View(model);
             }
-            //return View();
+            return View();
         }
 
        
