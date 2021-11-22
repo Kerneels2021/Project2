@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace PhotoImageGallery.Data.Models
 {
-    public class User
+    public class AccessType
     {
         public int Id { get; set; }
-        public string UserEmail { get; set; }
-        public string UserPassword { get; set; }
         
+        public string UserAccessType { get; set; }
+
     }
 }

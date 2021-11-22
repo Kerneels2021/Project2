@@ -16,7 +16,12 @@
                 <span>Geolocation: @Model.Geolocation</span>
             </div>
             <div class="image-detail-meta">
-                <span>Tags: @Model.Tags</span>
+                @foreach(var m in @Model.Tags)
+                {
+                <td>
+                    @Html.DisplayFor(m => m.Tags)                    
+                </td>
+                }                
             </div>
         </div>
     </div>

@@ -42,7 +42,7 @@ namespace Project2.Controllers
             {
                 var container = _imageService.GetBlobContainer(AzureConnectionString, "photoimages");
                 var content = ContentDispositionHeaderValue.Parse(file.ContentDisposition);
-                var fileName = content.FileName.Trim('"', ' ');
+                var fileName = content.FileName.Trim('"');
 
                 //Get a reference to the Block Blob
                 var blockBlob = container.GetBlockBlobReference(fileName);
